@@ -1,0 +1,16 @@
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+}
+
+nav button {
+    display: inline-block;
+    margin: 5px 10px;
+}
+
+main {
+    margin-top: 64px;
+}
