@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 
 import VideoPlayer from './VideoPlayer'
 
@@ -8,6 +8,7 @@ import './App.css'
 
 export default function PhotosApp() {
     const [ videoIsPlaying, setVideoIsPlaying ] = useState(false)
+    const [ text, setText ] = useState("")
     const counterRef = useRef(0)
     const firstCatRef = useRef(null)
     const secondCatRef = useRef(null)
@@ -58,7 +59,8 @@ export default function PhotosApp() {
                     <img src="http://placekitten.com/480/480?image=3" />
                 </div>
                 <div>
-                    <VideoPlayer src={kittiesVideo} />
+                    <input value={text} onChange={e => setText(e.target.value)} />
+                    <VideoPlayer src={kittiesVideo} isPlaying={videoIsPlaying} />
                     <div>
                         <button onClick={() => setVideoIsPlaying(prev => !prev)}>
                             {videoIsPlaying ? "⏸️" : "▶️"}
